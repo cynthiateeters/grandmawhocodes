@@ -9,6 +9,7 @@
 :root {
   --color-primary: #f5f5f5;
   --color-secondary: #333;
+  --element-width: max(250px, 50vh);
 }
 
 html,
@@ -29,8 +30,40 @@ body {
   height: 100vh
 }
 
+.container {
+  width: 100%;
+  height: 100%;
+}
+
 .grid {
   display: grid;
   place-items: center;
   background-color: aliceblue;
+  align-items: start;
+  grid-template-rows: 1fr 3fr;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: clamp(1rem, -0.0909rem + 5.4545vw, 4rem);
+  max-width: 80vw;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+
+.img-wrapper {
+  max-width: var(--element-width, 250px);
+}
+
+.avatar {
+  max-width: 100%;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+/* Plugin looks for elements with class named "balance-text" */
+.balance-text {
+  text-wrap: balance;
+  /* Apply (proposed) CSS style */
 }
